@@ -15,13 +15,14 @@ const project = new awscdk.AwsCdkConstructLibrary({
     runtime: awscdk.LambdaRuntime.NODEJS_20_X,
   },
   stability: Stability.EXPERIMENTAL,
+  releaseToNpm: true,
   // publishToNuget: {
   //   dotNetNamespace: "srobroek.CdkCtfd",
   //   packageId: "srobroek.CdkCtfD",
   // },
   publishToPypi: {
     distName: "srobroek.cdk-ctfd",
-    module: "cdk.ctfd",
+    module: "cdk-ctfd",
   },
   // publishToGo: {
   //   moduleName: "github.com/srobroek/cdk-ctfd",
@@ -41,9 +42,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   //     "cdk-iam-floyd"
   // ],
   keywords: ["aws", "cdk", "construct", "typescript", "ctfd"],
-  gitignore: [
-      'cdk.out/'
-  ],
+  gitignore: ["cdk.out/"],
 
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */

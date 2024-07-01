@@ -137,7 +137,7 @@
     "targets": {
       "python": {
         "distName": "srobroek.cdk-ctfd",
-        "module": "cdk.ctfd"
+        "module": "cdk-ctfd"
       }
     },
     "tsc": {
