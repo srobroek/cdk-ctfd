@@ -41,6 +41,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
   //     "cdk-iam-floyd"
   // ],
   keywords: ["aws", "cdk", "construct", "typescript", "ctfd"],
+  gitignore: [
+      'cdk.out'
+  ],
 
   // deps: [],                /* Runtime dependencies of this module. */
   // description: undefined,  /* The description is just a string that helps people understand the purpose of the package. */
