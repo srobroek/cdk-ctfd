@@ -42,7 +42,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   // ],
   keywords: ["aws", "cdk", "construct", "typescript", "ctfd"],
   gitignore: [
-      'cdk.out'
+      'cdk.out/'
   ],
 
   // deps: [],                /* Runtime dependencies of this module. */
