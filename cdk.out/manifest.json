@@ -1,0 +1,449 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "CtfdDeploymentStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "CtfdDeploymentStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "CtfdDeploymentStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "CtfdDeploymentStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/eb4595320e5289da9f01d834c213d86b4cb4bbae127d58fb36e4acfc3d7c7b48.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "CtfdDeploymentStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "CtfdDeploymentStack.assets"
+      ],
+      "metadata": {
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdBucketBDC66E86"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdBucketPolicy51D9C35C"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcBB887D80"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet1Subnet7CDDB791"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet1RouteTable1A087A54"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet1RouteTableAssociation005645A9"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet1DefaultRouteD8EF3779"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet1/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet1EIPF77CE697"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet1/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet1NATGateway7A184281"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet2SubnetCEBD1164"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet2RouteTable517C11D6"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet2RouteTableAssociation19847B34"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet2DefaultRouteD51DB635"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet2/EIP": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet2EIP394222A3"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-publicSubnet2/NATGateway": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdpublicSubnet2NATGateway890DD54F"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-privateSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdprivateSubnet1Subnet2829D2DD"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-privateSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdprivateSubnet1RouteTable48A3FE34"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-privateSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdprivateSubnet1RouteTableAssociation42A8BAF1"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-privateSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdprivateSubnet1DefaultRouteDF9F8692"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-privateSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdprivateSubnet2Subnet416557CF"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-privateSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdprivateSubnet2RouteTableCB536B79"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-privateSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdprivateSubnet2RouteTableAssociation85E9D38A"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/ctfd-privateSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcctfdprivateSubnet2DefaultRoute707AF5C9"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcIGW4F44D0DC"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcVPCGW08873E39"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdVpc/s3Endpoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdVpcs3Endpoint7D7B5A98"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/dbSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdbSecurityGroup1988C672"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/dbSecurityGroup/from CtfdDeploymentStackCtfdDeploymentctfdSecurityGroup3C0DB66D:3306": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdbSecurityGroupfromCtfdDeploymentStackCtfdDeploymentctfdSecurityGroup3C0DB66D330644B1831A"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/dbCluster/Subnets/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdbClusterSubnets67957BC3"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/dbCluster/Secret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentStackCtfdDeploymentdbClusterSecret7E8FA29E3fdaad7efa858a3daf9490cf0a702aeb"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/dbCluster/Secret/Attachment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdbClusterSecretAttachment839170AC"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/dbCluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdbCluster466C09EF"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/dbCluster/writer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdbClusterwriter00245290"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/dbCluster/reader/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdbClusterreader06C0725F"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/redisSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentredisSecurityGroup3DEC32D8"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdServerlessCache": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServerlessCacheB70093CE"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/databaseConnectionStringSecret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdatabaseConnectionStringSecretDA819DD4"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/redisConnectionStringSecret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentredisConnectionStringSecretB104BBFD"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdSecretKeySecret/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdSecretKeySecret35A08A34"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdSecurityGroup6EC89554"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdSecurityGroup/from CtfdDeploymentStackCtfdDeploymentctfdServiceLBSecurityGroupF6D594F0:8080": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdSecurityGroupfromCtfdDeploymentStackCtfdDeploymentctfdServiceLBSecurityGroupF6D594F08080A2565732"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceLB13374982"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/LB/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceLBSecurityGroup00CC53E1"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/LB/SecurityGroup/to CtfdDeploymentStackCtfdDeploymentctfdSecurityGroup3C0DB66D:8080": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceLBSecurityGrouptoCtfdDeploymentStackCtfdDeploymentctfdSecurityGroup3C0DB66D80804A10E634"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/LB/SecurityGroup/from pl-fab65393:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceLBSecurityGroupfromplfab65393807C2C750D"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/LB/PublicListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceLBPublicListener713C9316"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/LB/PublicListener/ECSGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceLBPublicListenerECSGroup96CAFACF"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceLoadBalancerDNS57840057"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/ServiceURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceServiceURLBBC1E375"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/TaskDef/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceTaskDefTaskRoleFA3098A1"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/TaskDef/TaskRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceTaskDefTaskRoleDefaultPolicyC52B9F0A"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/TaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceTaskDef8DA8DDFA"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/TaskDef/web/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceTaskDefwebLogGroupADA26AFF"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/TaskDef/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceTaskDefExecutionRoleE22C7310"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/TaskDef/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceTaskDefExecutionRoleDefaultPolicy61F3EC1C"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/Service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdService2AE2C0AE"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/Service/TaskCount/Target/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceTaskCountTarget6913A1C2"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/Service/TaskCount/Target/cpuUtilisation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceTaskCountTargetcpuUtilisation2DDADBE3"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/ctfdService/Service/TaskCount/Target/memoryUtilisation/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentctfdServiceTaskCountTargetmemoryUtilisation827F2820"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/distribution/LoggingBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdistributionLoggingBucket84E09C25"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/distribution/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentdistribution5222908B"
+          }
+        ],
+        "/CtfdDeploymentStack/CtfdDeployment/redisSecurityGroupLookup/from CtfdDeploymentStackCtfdDeploymentctfdSecurityGroup3C0DB66D:6379": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CtfdDeploymentredisSecurityGroupLookupfromCtfdDeploymentStackCtfdDeploymentctfdSecurityGroup3C0DB66D63797001B2EC"
+          }
+        ],
+        "/CtfdDeploymentStack/EcsDefaultClusterMnL3mNNYNctfdVpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EcsDefaultClusterMnL3mNNYNctfdVpc180B9E85"
+          }
+        ],
+        "/CtfdDeploymentStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/CtfdDeploymentStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/CtfdDeploymentStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/CtfdDeploymentStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "CtfdDeploymentStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

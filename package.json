@@ -1,8 +1,8 @@
 {
-  "name": "cdk-ctfd-construct",
+  "name": "cdk-ctfd",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sjors/cdk-ctfd-construct.git"
+    "url": "https://github.com/srobroek/cdk-ctfd-construct.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -17,6 +17,7 @@
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -30,15 +31,19 @@
   },
   "author": {
     "name": "Sjors Robroek",
-    "email": "sjors@amazon.com",
+    "email": "s.robroek@vxsan.com",
     "organization": false
   },
   "devDependencies": {
+    "@aws-cdk/integ-tests-alpha": "^2.140.0-alpha.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^18",
-    "@typescript-eslint/eslint-plugin": "^6",
-    "@typescript-eslint/parser": "^6",
-    "aws-cdk-lib": "2.1.0",
+    "@typescript-eslint/eslint-plugin": "^7",
+    "@typescript-eslint/parser": "^7",
+    "aws-cdk-lib": "2.140.0",
+    "aws-sdk-client-mock": "^4.0.1",
+    "aws-sdk-client-mock-jest": "^4.0.1",
+    "cdk-nag": "^2.28.144",
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-config-prettier": "^9.1.0",
@@ -60,16 +65,30 @@
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.140.0",
     "constructs": "^10.0.5"
   },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "bundledDependencies": [
+    "zod"
+  ],
   "keywords": [
-    "cdk"
+    "aws",
+    "cdk",
+    "construct",
+    "ctfd",
+    "typescript"
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
+    "coverageProvider": "v8",
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
       "<rootDir>/@(test|src)/**/*(*.)@(spec|test).ts?(x)"
@@ -112,10 +131,15 @@
     }
   },
   "types": "lib/index.d.ts",
-  "stability": "stable",
+  "stability": "experimental",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "srobroek.cdk-ctfd",
+        "module": "cdk.ctfd"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
